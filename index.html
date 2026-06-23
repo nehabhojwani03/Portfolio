@@ -1023,9 +1023,8 @@
 
       <div class="contact-form">
         <p class="form-eyebrow font-mono">Project brief</p>
-        <form class="form-fields" id="contact-form-el" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return sendBrief(event)">
-          <input type="hidden" name="form-name" value="contact">
-          <p style="display:none;"><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
+        <form class="form-fields" id="contact-form-el" onsubmit="return sendBrief(event)">
+          <input type="text" name="_honey" style="display:none;" tabindex="-1" autocomplete="off">
           <div class="form-field">
             <label for="cf-name">Your name</label>
             <input class="form-input" type="text" id="cf-name" name="name" placeholder="Jane from Acme" required>
@@ -1093,11 +1092,12 @@
   }
 </script>
 
-<!-- Contact form: submits to Netlify Forms (AJAX), so briefs land in your inbox without leaving the page.
-     ⚠️ ONE-TIME SETUP after deploying to Netlify:
-        Netlify dashboard → your site → Forms → Form notifications → Add notification → Email notification
-        → send to nehabhojwani330@gmail.com. (Submissions are also stored under Forms.)
-     Note: this only works on the deployed Netlify site, not when opening the file locally. -->
+<!-- Contact form: submits to FormSubmit.co (free, no account) and emails briefs straight to your inbox.
+     ⚠️ ONE-TIME ACTIVATION: the FIRST time the form is submitted on the live site, FormSubmit emails
+        nehabhojwani330@gmail.com a "Confirm your email / Activate Form" link. Click it once — after that,
+        every submission is delivered automatically. (Check Spam if you don't see the activation email.)
+     Tip: to avoid showing your email in the page source, after activating you can swap the address in the
+        fetch URL below for the random alias FormSubmit gives you (https://formsubmit.co/your-alias). -->
 <script>
   function showToast(msg) {
     const t = document.getElementById('toast');
@@ -1114,13 +1114,25 @@
     btn.disabled = true;
     btn.textContent = 'Sending…';
 
-    fetch('/', {
+    const payload = {
+      name: document.getElementById('cf-name').value.trim(),
+      email: document.getElementById('cf-email').value.trim(),
+      message: document.getElementById('cf-msg').value.trim(),
+      _subject: 'New project brief from your portfolio',
+      _template: 'table',
+      _captcha: 'false'
+    };
+
+    fetch('https://formsubmit.co/ajax/nehabhojwani330@gmail.com', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(new FormData(form)).toString()
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload)
     })
       .then((res) => {
         if (!res.ok) throw new Error('Network response was not ok');
+        return res.json();
+      })
+      .then(() => {
         form.reset();
         showToast('Thanks! Your brief just landed in my inbox ✨');
       })
