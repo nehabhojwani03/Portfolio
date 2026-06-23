@@ -3,9 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Neha Bhojwani — React Native Engineer">
-  <title>Neha Bhojwani | React Native Engineer</title>
+  <meta name="description" content="Neha Bhojwani — freelance React Native developer. I build and ship cross-platform mobile apps for startups, from MVP to App Store & Play Store.">
+  <title>Neha Bhojwani | Freelance React Native Developer for Hire</title>
   <link rel="icon" type="image/jpeg" href="assets/images/image.jpeg">
+  <!-- Social share preview (so the link looks good on WhatsApp / LinkedIn / X) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Neha Bhojwani | Freelance React Native Developer">
+  <meta property="og:description" content="I build and ship cross-platform mobile apps for startups — MVPs, performance fixes, and store launches, handled end-to-end.">
+  <meta property="og:image" content="assets/images/image.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -248,22 +254,20 @@
 
     /* ===== ABOUT ===== */
    #about { background: #EFE9DC; }
-    .about-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; }
-    @media (min-width: 1024px) { .about-grid { grid-template-columns: 8fr 4fr; gap: 4rem; } }
-    .about-lead { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; line-height: 1.05; letter-spacing: -0.025em; font-size: 1.875rem; }
+    .about-lead { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; line-height: 1.05; letter-spacing: -0.025em; font-size: 1.875rem; max-width: 52rem; }
     @media (min-width: 768px) { .about-lead { font-size: 3rem; } }
     .about-body { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1.25rem; max-width: 42rem; font-size: 1rem; color: rgba(10,10,10,0.8); line-height: 1.625; }
     @media (min-width: 768px) { .about-body p { font-size: 1.125rem; } }
-    .stats-card { border-radius: 1rem; border: 1px solid rgba(10,10,10,0.15); background: var(--background); padding: 0.5rem; }
-    .stats-inner { border-radius: 0.75rem; background: #0A0A0A; color: #F5F1EA; padding: 1.5rem; }
-    .stats-label { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(245,241,234,0.6); margin-bottom: 1.25rem; }
-    .stats-list { display: flex; flex-direction: column; }
-    .stats-item { display: flex; align-items: baseline; justify-content: space-between; padding: 0.75rem 0; border-top: 1px solid rgba(245,241,234,0.1); }
-    .stats-item:first-child { border-top: none; }
-    .stats-key { font-size: 0.875rem; color: rgba(245,241,234,0.7); }
-    .stats-val { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 1.5rem; color: var(--accent); }
-    .about-note { margin-top: 1rem; display: flex; align-items: center; gap: 0.75rem; font-size: 0.75rem; color: var(--muted-fg); font-family: 'JetBrains Mono', monospace; }
-    .about-note span { width: 0.5rem; height: 0.5rem; border-radius: 9999px; background: var(--coral); display: inline-block; flex-shrink: 0; }
+    .about-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: start; }
+    @media (min-width: 1024px) { .about-grid { grid-template-columns: 7fr 5fr; gap: 4rem; } }
+    .about-aside { border-radius: 1rem; border: 1px solid rgba(10,10,10,0.15); background: #0A0A0A; color: #F5F1EA; padding: 1.75rem; }
+    @media (min-width: 1024px) { .about-aside { position: sticky; top: 7rem; } }
+    .about-aside-label { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(245,241,234,0.55); margin-bottom: 1.25rem; }
+    .about-fact { display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.875rem 0; border-top: 1px solid rgba(245,241,234,0.1); font-size: 0.9375rem; color: rgba(245,241,234,0.9); line-height: 1.4; }
+    .about-fact:first-of-type { border-top: none; }
+    .about-fact svg { color: var(--accent); flex-shrink: 0; margin-top: 0.125rem; }
+    .about-aside-cta { margin-top: 1.5rem; display: inline-flex; align-items: center; gap: 0.5rem; background: var(--accent); color: #0A0A0A; padding: 0.625rem 1.25rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 600; transition: background-color 0.15s; }
+    .about-aside-cta:hover { background: #F5F1EA; }
 
     /* ===== SKILLS ===== */
     #skills { background: #0A0A0A; color: #F5F1EA; position: relative; overflow: hidden; }
@@ -308,11 +312,13 @@
     .projects-header { display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 3rem; }
     @media (min-width: 768px) { .projects-header { flex-direction: row; align-items: flex-end; justify-content: space-between; } }
     .projects-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
-    @media (min-width: 768px) { .projects-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 640px) { .projects-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1024px) { .projects-grid { grid-template-columns: repeat(3, 1fr); } }
     .project-card {
       position: relative; border-radius: 1.5rem; overflow: hidden;
       border: 1px solid rgba(10,10,10,0.15); background: #F5F1EA;
       transition: border-color 0.3s, box-shadow 0.3s, transform 0.4s cubic-bezier(.2,.8,.2,1);
+      display: flex; flex-direction: column;
     }
     .project-card:hover { border-color: #0A0A0A; box-shadow: 6px 6px 0 0 #0A0A0A; transform: translateY(-4px); }
     .project-img-wrap { aspect-ratio: 16/11; overflow: hidden; background: rgba(10,10,10,0.05); position: relative; }
@@ -336,33 +342,35 @@
       transition: background-color 0.15s, color 0.15s;
     }
     .project-card:hover .project-arrow-btn { background: var(--coral); color: #0A0A0A; }
-    .project-body { padding: 1.75rem; }
+    .project-body { padding: 1.75rem; flex: 1; display: flex; flex-direction: column; }
     .project-title-row { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
     .project-title { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 1.5rem; letter-spacing: -0.025em; }
     @media (min-width: 768px) { .project-title { font-size: 1.875rem; } }
     .project-period { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--muted-fg); white-space: nowrap; }
     .project-desc { margin-top: 0.75rem; color: rgba(10,10,10,0.75); }
     .project-highlights { margin-top: 1.25rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1rem; }
+    @media (min-width: 1024px) { .project-highlights { grid-template-columns: 1fr; } }
     .project-highlight { display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.875rem; color: rgba(10,10,10,0.8); }
     .project-highlight-plus { font-family: 'JetBrains Mono', monospace; color: var(--coral); margin-top: 0.125rem; flex-shrink: 0; }
     .project-tags { margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
     .project-tag { font-size: 0.75rem; font-weight: 500; padding: 0.375rem 0.75rem; border-radius: 9999px; background: rgba(10,10,10,0.05); border: 1px solid rgba(10,10,10,0.1); }
 
-    /* ===== EDUCATION ===== */
-    #education { background: var(--background); }
-    .edu-grid { margin-top: 3rem; display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
-    @media (min-width: 768px) { .edu-grid { grid-template-columns: 1fr 1fr; } }
-    .edu-card {
+    /* ===== SERVICES ===== */
+    #services { background: var(--background); }
+    .svc-grid { margin-top: 3.5rem; display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+    @media (min-width: 768px) { .svc-grid { grid-template-columns: 1fr 1fr; } }
+    .svc-card {
       border-radius: 1rem; border: 1px solid rgba(10,10,10,0.15); background: rgba(245,241,234,0.6);
-      padding: 1.75rem; transition: border-color 0.3s, background-color 0.3s, transform 0.4s;
+      padding: 1.75rem; transition: border-color 0.3s, box-shadow 0.3s, transform 0.4s cubic-bezier(.2,.8,.2,1);
     }
-    .edu-card:hover { border-color: #0A0A0A; background: #F5F1EA; transform: translateY(-4px); }
-    .edu-icon { width: 3rem; height: 3rem; border-radius: 0.75rem; background: var(--accent); border: 1px solid #0A0A0A; display: grid; place-items: center; }
-    .edu-period { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--muted-fg); margin-top: 1rem; }
-    .edu-degree { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 1.25rem; line-height: 1.25; margin-top: 0.25rem; }
-    @media (min-width: 768px) { .edu-degree { font-size: 1.5rem; } }
-    .edu-school { color: var(--muted-fg); margin-top: 0.25rem; }
-    .edu-score { margin-top: 1rem; display: inline-flex; align-items: center; gap: 0.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; padding: 0.375rem 0.75rem; border-radius: 9999px; background: #0A0A0A; color: #F5F1EA; }
+    .svc-card:hover { border-color: #0A0A0A; box-shadow: 6px 6px 0 0 #0A0A0A; transform: translateY(-4px); }
+    .svc-top { display: flex; align-items: center; justify-content: space-between; }
+    .svc-icon { width: 3rem; height: 3rem; border-radius: 0.75rem; background: var(--accent); border: 1px solid #0A0A0A; display: grid; place-items: center; }
+    .svc-num { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--muted-fg); }
+    .svc-title { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 1.5rem; margin-top: 1.25rem; }
+    .svc-desc { margin-top: 0.75rem; color: rgba(10,10,10,0.78); line-height: 1.6; }
+    .svc-foot { margin-top: 1.25rem; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--muted-fg); display: flex; align-items: center; gap: 0.5rem; }
+    .svc-foot span { width: 0.4rem; height: 0.4rem; border-radius: 9999px; background: var(--coral); display: inline-block; flex-shrink: 0; }
 
     /* ===== CONTACT ===== */
     #contact { background: #0A0A0A; color: #F5F1EA; position: relative; overflow: hidden; }
@@ -448,13 +456,17 @@
     </a>
     <nav>
       <a href="#about" class="link-underline">About</a>
+      <a href="#services" class="link-underline">Services</a>
       <a href="#skills" class="link-underline">Skills</a>
       <a href="#experience" class="link-underline">Experience</a>
       <a href="#projects" class="link-underline">Projects</a>
-      <a href="#education" class="link-underline">Education</a>
       <a href="#contact" class="link-underline">Contact</a>
     </nav>
     <div class="header-actions">
+      <div class="status-badge">
+        <span class="ping-dot"><span class="ring animate-ping"></span><span class="dot"></span></span>
+        Available for freelance
+      </div>
       <a href="#contact" class="btn-say-hi">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg>
         Say hi
@@ -469,10 +481,10 @@
 <!-- Mobile Menu -->
 <div class="mobile-menu" id="mobile-menu">
   <a href="#about" onclick="closeMobileMenu()">About</a>
+  <a href="#services" onclick="closeMobileMenu()">Services</a>
   <a href="#skills" onclick="closeMobileMenu()">Skills</a>
   <a href="#experience" onclick="closeMobileMenu()">Experience</a>
   <a href="#projects" onclick="closeMobileMenu()">Projects</a>
-  <a href="#education" onclick="closeMobileMenu()">Education</a>
   <a href="#contact" onclick="closeMobileMenu()">Contact</a>
 </div>
 
@@ -486,6 +498,7 @@
           <span class="hero-eyebrow-line"></span>
         </div>
         <h1 class="hero-h1 font-display">Neha<br>Bhojwani<span class="hero-subtitle" aria-hidden="true">*but you can just call me Neha</span></h1>
+        <p class="hero-desc">A freelance <strong>React Native developer</strong> who turns app ideas into things people actually want to use. Need an MVP shipped, a laggy app made buttery again, or your build wrangled onto the App Store <em>and</em> Play Store? That's my happy place — chai in hand.</p>
         <div class="hero-actions">
           <a href="#projects" class="btn-primary">
             See my work
@@ -503,7 +516,6 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
             Rajasthan, IN
           </span>
-          <span class="font-mono">lat: 27.02° N · lon: 74.22° E</span>
         </div>
       </div>
 
@@ -541,24 +553,106 @@
         <p class="about-lead font-display">Hey! I'm Neha <span class="font-serif-it text-coral">— a software engineer who lives at the intersection of mobile apps, clean code and a good cup of masala chai.</span></p>
         <div class="about-body">
           <p>What started as curiosity turned into a habit of building, breaking, and refining until things just feel right. I’ve always been drawn to what happens behind the scenes — which led me to crafting mobile apps that aren’t just functional, but thoughtfully designed.</p>
-          <p>Now, I work with React Native to create smooth, reliable user experiences — focusing on performance, clean architecture, and the small details most people overlook. When I’m not coding, you’ll probably find me exploring new ideas, improving my skills, or simply enjoying that perfect cup of chai that fuels it all.</p>
+          <p>Now I team up with founders and small teams to take React Native apps from idea to the app stores — smooth, reliable, and built to last. I care about performance, clean architecture, and the small details most people overlook (the ones that quietly make an app feel <em>good</em>). When I’m not coding, you’ll probably find me exploring new ideas, sharpening my skills, or enjoying that perfect cup of chai that fuels it all.</p>
         </div>
       </div>
       <div>
-        <div class="stats-card">
-          <div class="stats-inner">
-            <p class="stats-label font-mono">by the numbers</p>
-            <ul class="stats-list">
-              <li class="stats-item"><span class="stats-key">Coding journey</span><span class="stats-val font-display">4</span></li>
-              <li class="stats-item"><span class="stats-key">Chai consumed</span><span class="stats-val font-display">∞</span></li>
-              <li class="stats-item"><span class="stats-key">Bugs fixed</span><span class="stats-val font-display">lots</span></li>
-            </ul>
+        <div class="about-aside">
+          <p class="about-aside-label">at a glance</p>
+          <div class="about-fact">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+            <span>Available for new freelance projects</span>
           </div>
-        </div>
-        <div class="about-note font-mono">
-          <span></span>probably refactoring something right now
+          <div class="about-fact">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Based in Rajasthan, IN — work fully remote</span>
+          </div>
+          <div class="about-fact">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+            <span>React Native specialist — iOS &amp; Android</span>
+          </div>
+          <div class="about-fact">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>Replies within ~24 hours</span>
+          </div>
+          <a href="#contact" class="about-aside-cta">
+            Start a project
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 7 10 10"/><path d="M17 7v10H7"/></svg>
+          </a>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SERVICES ========== -->
+<section id="services">
+  <div class="container">
+    <div class="section-eyebrow">
+      <span class="font-mono" style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted-fg)">03 — services</span>
+      <span class="section-line section-line-light"></span>
+    </div>
+    <h2 class="section-h2 font-display">Here's how I can <span class="font-serif-it text-coral">help.</span></h2>
+    <p style="margin-top:1.5rem;max-width:42rem;font-size:1.125rem;color:rgba(10,10,10,0.75);line-height:1.625;">No jargon, no over-engineering — just pick the bit that sounds like your problem and let's talk.</p>
+    <div class="svc-grid">
+
+      <div class="svc-card">
+        <div class="svc-top">
+          <div class="svc-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="m6.4 6.4 2.8 2.8"/><path d="M2 12h4"/><circle cx="12" cy="14" r="4"/><path d="M12 18v4"/></svg>
+          </div>
+          <span class="svc-num">01</span>
+        </div>
+        <p class="svc-title font-display">MVPs, built to ship</p>
+        <p class="svc-desc">Got an app idea rattling around? I take it from blank screen to something real you can put in front of actual users — fast, focused, and without the kitchen-sink features you don't need yet.</p>
+        <p class="svc-foot font-mono"><span></span>React Native · iOS + Android</p>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-top">
+          <div class="svc-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m13 2-3 7h5l-3 7"/><path d="M5 13v-2a7 7 0 0 1 14 0v2"/></svg>
+          </div>
+          <span class="svc-num">02</span>
+        </div>
+        <p class="svc-title font-display">Apps that don't lag</p>
+        <p class="svc-desc">Already have an app that feels sluggish, janky, or held together with tape? I dig into the performance, untangle the architecture, and get it back to buttery-smooth — the way it should've felt from day one.</p>
+        <p class="svc-foot font-mono"><span></span>Performance · refactors · bug-squashing</p>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-top">
+          <div class="svc-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/></svg>
+          </div>
+          <span class="svc-num">03</span>
+        </div>
+        <p class="svc-title font-display">Store launches, handled</p>
+        <p class="svc-desc">The App Store / Play Store dance is nobody's idea of fun. I own the whole release — builds, certificates, the screenshots, the rejections — so your app actually lands in people's hands instead of sitting in limbo.</p>
+        <p class="svc-foot font-mono"><span></span>Releases owned end-to-end</p>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-top">
+          <div class="svc-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>
+          </div>
+          <span class="svc-num">04</span>
+        </div>
+        <p class="svc-title font-display">Backend that backs it up</p>
+        <p class="svc-desc">Need an API to go with the app? I wire up Node, Express, and MongoDB so your frontend has something solid to talk to — auth, payments, the lot — without you juggling a second freelancer.</p>
+        <p class="svc-foot font-mono"><span></span>Node · Express · MongoDB</p>
+      </div>
+
+    </div>
+    <div style="margin-top:2.5rem;display:flex;flex-wrap:wrap;align-items:center;gap:1rem;">
+      <a href="#contact" class="btn-primary">
+        Start a project
+        <span class="icon-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 7 10 10"/><path d="M17 7v10H7"/></svg>
+        </span>
+      </a>
+      <span class="font-mono" style="font-size:0.8125rem;color:var(--muted-fg);">Not sure which one? Just say hi — we'll figure it out.</span>
     </div>
   </div>
 </section>
@@ -568,7 +662,7 @@
   <div class="absolute inset-0 dot-grid" style="position:absolute;inset:0;opacity:0.08;pointer-events:none;"></div>
   <div class="container" style="position:relative;">
     <div class="section-eyebrow">
-      <span class="font-mono" style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(245,241,234,0.5)">03 — stack</span>
+      <span class="font-mono" style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(245,241,234,0.5)">04 — stack</span>
       <span class="section-line section-line-dark"></span>
     </div>
     <h2 class="section-h2 font-display" style="color:#F5F1EA;">The toolbox<span class="text-coral">.</span> </h2>
@@ -589,22 +683,34 @@
         <div class="skill-tags">
           <span class="skill-tag">React Native</span>
           <span class="skill-tag">React.js</span>
+          <span class="skill-tag">Expo Router</span>
           <span class="skill-tag">Node.js</span>
           <span class="skill-tag">Express.js</span>
           <span class="skill-tag">Tailwind CSS</span>
+          <span class="skill-tag">NativeWind</span>
           <span class="skill-tag">Bootstrap</span>
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-card-top"><span class="skill-group">I store stuff in</span><span class="skill-num font-mono">03</span></div>
+        <div class="skill-card-top"><span class="skill-group">I wrangle state with</span><span class="skill-num font-mono">03</span></div>
+        <p class="skill-label font-display">State &amp; Data</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Zustand</span>
+          <span class="skill-tag">TanStack Query</span>
+          <span class="skill-tag">Context API</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-top"><span class="skill-group">I store stuff in</span><span class="skill-num font-mono">04</span></div>
         <p class="skill-label font-display">Databases</p>
         <div class="skill-tags">
           <span class="skill-tag">MongoDB</span>
           <span class="skill-tag">SQL</span>
+          <span class="skill-tag">Supabase</span>
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-card-top"><span class="skill-group">I keep tidy with</span><span class="skill-num font-mono">04</span></div>
+        <div class="skill-card-top"><span class="skill-group">I keep tidy with</span><span class="skill-num font-mono">05</span></div>
         <p class="skill-label font-display">Tools</p>
         <div class="skill-tags">
           <span class="skill-tag">Git</span>
@@ -614,7 +720,7 @@
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-card-top"><span class="skill-group">I work in</span><span class="skill-num font-mono">05</span></div>
+        <div class="skill-card-top"><span class="skill-group">I work in</span><span class="skill-num font-mono">06</span></div>
         <p class="skill-label font-display">Methodologies</p>
         <div class="skill-tags">
           <span class="skill-tag">Agile</span>
@@ -630,11 +736,48 @@
 <section id="experience">
   <div class="container">
     <div class="section-eyebrow">
-      <span class="font-mono" style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted-fg)">04 — experience</span>
+      <span class="font-mono" style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted-fg)">05 — experience</span>
       <span class="section-line section-line-light"></span>
     </div>
     <h2 class="section-h2 font-display">Where I've been <span class="font-serif-it text-coral">making things.</span></h2>
     <div class="exp-list">
+
+      <!-- Bazar Mela -->
+      <article class="exp-card">
+        <div class="exp-inner">
+          <div>
+            <div style="display:flex;align-items:center;gap:0.75rem;">
+              <div class="exp-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
+              </div>
+              <div>
+                <p class="exp-company font-display">Bazar Mela</p>
+                <p class="exp-role">Software Engineer</p>
+              </div>
+            </div>
+            <div class="exp-meta">
+              <span class="exp-tag font-mono">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+                Remote
+              </span>
+            </div>
+          </div>
+          <div>
+            <ul class="exp-bullets">
+              <li class="exp-bullet"><span class="exp-bullet-arrow">→</span><span>Built and shipped features across three React Native apps spanning multiple business workflows.</span></li>
+              <li class="exp-bullet"><span class="exp-bullet-arrow">→</span><span>Wired up REST APIs and handled app state with Zustand + TanStack Query for scalable, snappy mobile experiences.</span></li>
+              <li class="exp-bullet"><span class="exp-bullet-arrow">→</span><span>Owned the Android side end-to-end — build generation, release management, and Play Store submissions.</span></li>
+            </ul>
+            <div class="exp-tech">
+              <span class="exp-tech-tag">React Native</span>
+              <span class="exp-tech-tag">Zustand</span>
+              <span class="exp-tech-tag">TanStack Query</span>
+              <span class="exp-tech-tag">REST APIs</span>
+              <span class="exp-tech-tag">Android</span>
+            </div>
+          </div>
+        </div>
+      </article>
 
       <!-- iCredy -->
       <article class="exp-card">
@@ -650,12 +793,10 @@
               </div>
             </div>
             <div class="exp-meta">
-              <span class="exp-tag font-mono">Oct 2024 — Present</span>
               <span class="exp-tag font-mono">
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
                 Remote
               </span>
-              <span class="exp-tag exp-current font-mono">currently here</span>
             </div>
           </div>
           <div>
@@ -690,7 +831,6 @@
               </div>
             </div>
             <div class="exp-meta">
-              <span class="exp-tag font-mono">Apr 2024 — Aug 2024</span>
               <span class="exp-tag font-mono">
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
                 Remote
@@ -720,30 +860,104 @@
 <section id="projects" style="background:#EFE9DC;">
   <div class="container">
     <div class="section-eyebrow">
-      <span class="font-mono" style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted-fg)">05 — projects</span>
+      <span class="font-mono" style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted-fg)">06 — projects</span>
       <span class="section-line section-line-light"></span>
     </div>
     <div class="projects-header">
-      <h2 class="section-h2 font-display">Things I've <span class="font-serif-it text-coral">build</span><span class="text-coral">.</span></h2>
+      <h2 class="section-h2 font-display">Things I've <span class="font-serif-it text-coral">built</span><span class="text-coral">.</span></h2>
+      <p class="font-mono" style="font-size:0.8125rem;color:var(--muted-fg);max-width:22rem;">A peek at what I make. Yours could be the next one in this list.</p>
     </div>
     <div class="projects-grid">
 
-      <!-- Project 1 -->
+      <!-- BingeBox -->
       <article class="project-card">
         <div class="project-img-wrap">
-          <img src="assets/images/furniture.png" alt="Neha Bhojwani" style="width:100%;height:100%;object-fit:cover;">
-          <div class="project-img-placeholder">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            <span>Furniture E-Commerce App</span>
-          </div>
-          <div class="project-num font-mono">01 / 02</div>
-          <a href="https://github.com/nehabhojwani03/Furniture-Frontend-App" target="_blank" rel="noreferrer" class="project-arrow-btn">
+          <img src="assets/images/bingbox-cover.png" alt="BingeBox streaming app" style="width:100%;height:100%;object-fit:cover;">
+          <div class="project-num font-mono">01 / 03</div>
+          <a href="bingebox.html" aria-label="Read BingeBox case study" class="project-arrow-btn">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
           </a>
         </div>
         <div class="project-body">
           <div class="project-title-row">
-            <h3 class="project-title font-display">Furniture E-Commerce App</h3>
+            <h3 class="project-title font-display">BingeBox</h3>
+            <span class="project-period font-mono">Jan 2026 — Mar 2026</span>
+          </div>
+          <p class="project-desc">A movie &amp; show streaming app where hunting for your next binge actually feels premium.</p>
+          <ul class="project-highlights">
+            <li class="project-highlight"><span class="project-highlight-plus">+</span>TMDB-powered discovery, search &amp; details</li>
+            <li class="project-highlight"><span class="project-highlight-plus">+</span>Watchlists &amp; continue-watching via Supabase</li>
+            <li class="project-highlight"><span class="project-highlight-plus">+</span>Premium subscriptions with Razorpay</li>
+            <li class="project-highlight"><span class="project-highlight-plus">+</span>Push notifications via OneSignal</li>
+          </ul>
+          <div class="project-tags">
+            <span class="project-tag">React Native</span>
+            <span class="project-tag">TypeScript</span>
+            <span class="project-tag">Expo Router</span>
+            <span class="project-tag">NativeWind</span>
+            <span class="project-tag">Supabase</span>
+            <span class="project-tag">Razorpay</span>
+          </div>
+          <a href="bingebox.html" class="link-underline" style="display:inline-flex;align-items:center;gap:0.4rem;margin-top:auto;padding-top:1.5rem;font-family:'JetBrains Mono',monospace;font-size:0.8125rem;font-weight:600;color:var(--coral);">
+            Read the case study
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Grocify -->
+      <article class="project-card">
+        <div class="project-img-wrap">
+           <img src="assets/images/Grocery.png" alt="Grocify grocery delivery app" style="width:100%;height:100%;object-fit:cover;">
+          <div class="project-img-placeholder">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span>Grocify</span>
+          </div>
+          <div class="project-num font-mono">02 / 03</div>
+          <a href="grocify.html" aria-label="Read Grocify case study" class="project-arrow-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </a>
+        </div>
+        <div class="project-body">
+          <div class="project-title-row">
+            <h3 class="project-title font-display">Grocify</h3>
+            <span class="project-period font-mono">Jan 2024 — Apr 2024</span>
+          </div>
+          <p class="project-desc">A grocery delivery experience with buttery animations and notifications that don't annoy you.</p>
+          <ul class="project-highlights">
+            <li class="project-highlight"><span class="project-highlight-plus">+</span>Fluid animations using lottie</li>
+            <li class="project-highlight"><span class="project-highlight-plus">+</span>Google APIs integration</li>
+            <li class="project-highlight"><span class="project-highlight-plus">+</span>Push notifications done right</li>
+            <li class="project-highlight"><span class="project-highlight-plus">+</span>Express + MongoDB backend</li>
+          </ul>
+          <div class="project-tags">
+            <span class="project-tag">React Native</span>
+            <span class="project-tag">Express</span>
+            <span class="project-tag">MongoDB</span>
+          </div>
+          <a href="grocify.html" class="link-underline" style="display:inline-flex;align-items:center;gap:0.4rem;margin-top:auto;padding-top:1.5rem;font-family:'JetBrains Mono',monospace;font-size:0.8125rem;font-weight:600;color:var(--coral);">
+            Read the case study
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Homescape -->
+      <article class="project-card">
+        <div class="project-img-wrap">
+          <img src="assets/images/furniture.png" alt="Homescape furniture e-commerce app" style="width:100%;height:100%;object-fit:cover;">
+          <div class="project-img-placeholder">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            <span>Homescape</span>
+          </div>
+          <div class="project-num font-mono">03 / 03</div>
+          <a href="homescape.html" aria-label="Read Homescape case study" class="project-arrow-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </a>
+        </div>
+        <div class="project-body">
+          <div class="project-title-row">
+            <h3 class="project-title font-display">Homescape</h3>
             <span class="project-period font-mono">Oct 2024 — Dec 2024</span>
           </div>
           <p class="project-desc">A cross-platform furniture shopping app where browsing your next sofa actually feels good.</p>
@@ -759,73 +973,13 @@
             <span class="project-tag">Node.js</span>
             <span class="project-tag">MongoDB</span>
           </div>
-        </div>
-      </article>
-
-      <!-- Project 2 -->
-      <article class="project-card">
-        <div class="project-img-wrap">
-           <img src="assets/images/Grocery.png" alt="Neha Bhojwani" style="width:100%;height:100%;object-fit:cover;">
-          <div class="project-img-placeholder">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-            <span>Grocery Delivery App</span>
-          </div>
-          <div class="project-num font-mono">02 / 02</div>
-          <a href="https://github.com/nehabhojwani03/Grocery-App-Frontend" target="_blank" rel="noreferrer" class="project-arrow-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          <a href="homescape.html" class="link-underline" style="display:inline-flex;align-items:center;gap:0.4rem;margin-top:auto;padding-top:1.5rem;font-family:'JetBrains Mono',monospace;font-size:0.8125rem;font-weight:600;color:var(--coral);">
+            Read the case study
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
         </div>
-        <div class="project-body">
-          <div class="project-title-row">
-            <h3 class="project-title font-display">Grocery Delivery App</h3>
-            <span class="project-period font-mono">Jan 2024 — Apr 2024</span>
-          </div>
-          <p class="project-desc">A grocery delivery experience with buttery animations and notifications that don't annoy you.</p>
-          <ul class="project-highlights">
-            <li class="project-highlight"><span class="project-highlight-plus">+</span>Fluid animations using lottie</li>
-            <li class="project-highlight"><span class="project-highlight-plus">+</span>Google APIs integration</li>
-            <li class="project-highlight"><span class="project-highlight-plus">+</span>Push notifications done right</li>
-            <li class="project-highlight"><span class="project-highlight-plus">+</span>Express + MongoDB backend</li>
-          </ul>
-          <div class="project-tags">
-            <span class="project-tag">React Native</span>
-            <span class="project-tag">Express</span>
-            <span class="project-tag">MongoDB</span>
-          </div>
-        </div>
       </article>
 
-    </div>
-  </div>
-</section>
-
-<!-- ========== EDUCATION ========== -->
-<section id="education">
-  <div class="container">
-    <div class="section-eyebrow">
-      <span class="font-mono" style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted-fg)">06 — education</span>
-      <span class="section-line section-line-light"></span>
-    </div>
-    <h2 class="section-h2 font-display">School of <span class="font-serif-it text-coral">curiosity.</span></h2>
-    <div class="edu-grid">
-      <div class="edu-card">
-        <div class="edu-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
-        </div>
-        <p class="edu-period font-mono">2022 — 2024</p>
-        <p class="edu-degree font-display">Master of Computer Applications</p>
-        <p class="edu-school">PES University, Bangalore</p>
-        <div class="edu-score font-mono">CGPA 8.46 / 10</div>
-      </div>
-      <div class="edu-card">
-        <div class="edu-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
-        </div>
-        <p class="edu-period font-mono">2019 — 2022</p>
-        <p class="edu-degree font-display">Bachelor of Computer Applications</p>
-        <p class="edu-school">Aryan College, Ajmer</p>
-        <div class="edu-score font-mono">CGPA 8.30 / 10</div>
-      </div>
     </div>
   </div>
 </section>
@@ -841,9 +995,8 @@
     <div class="contact-grid">
       <div>
         <h2 class="contact-h2 font-display">Let's build<br><span class="font-serif-it text-lime">something neat.</span></h2>
-        <p class="contact-desc">Got a wild idea, a freelance gig, or just want to say hi? My inbox is open and my chai is hot.</p>
-      </div>
-      <div class="contact-links">
+        <p class="contact-desc">Got a wild idea, a half-baked brief, or a freelance gig you need shipped? Tell me what you're building — I usually reply within a day.</p>
+        <div class="contact-links">
           <a href="mailto:nehabhojwani330@gmail.com" class="contact-link">
             <span class="contact-link-left">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
@@ -866,7 +1019,30 @@
             <svg class="contact-link-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
           </a>
         </div>
-      <div>
+      </div>
+
+      <div class="contact-form">
+        <p class="form-eyebrow font-mono">Project brief</p>
+        <form class="form-fields" id="contact-form-el" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return sendBrief(event)">
+          <input type="hidden" name="form-name" value="contact">
+          <p style="display:none;"><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
+          <div class="form-field">
+            <label for="cf-name">Your name</label>
+            <input class="form-input" type="text" id="cf-name" name="name" placeholder="Jane from Acme" required>
+          </div>
+          <div class="form-field">
+            <label for="cf-email">Email</label>
+            <input class="form-input" type="email" id="cf-email" name="email" placeholder="jane@acme.com" required>
+          </div>
+          <div class="form-field">
+            <label for="cf-msg">What are you building?</label>
+            <textarea class="form-textarea" id="cf-msg" name="message" placeholder="An app that does X for Y — rough timeline and budget welcome, anything helps." required></textarea>
+          </div>
+          <button class="btn-submit" type="submit">
+            Send it over
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg>
+          </button>
+        </form>
       </div>
     </div>
   </div>
@@ -878,7 +1054,7 @@
     <div class="footer-inner">
       <div>
         <p class="footer-name font-display">Neha Bhojwani</p>
-        <p class="footer-copy">© 2026 · Made with React &amp; questionable amounts of typing.</p>
+        <p class="footer-copy">© 2026 · Hand-coded with care &amp; questionable amounts of chai.</p>
       </div>
       <div class="footer-socials">
         <a href="mailto:nehabhojwani330@gmail.com" aria-label="Email" class="footer-social">
@@ -894,6 +1070,8 @@
     </div>
   </div>
 </footer>
+
+<div id="toast"></div>
 
 <script>
   const header = document.getElementById('site-header');
@@ -912,6 +1090,49 @@
 
   function closeMobileMenu() {
     mobileMenu.classList.remove('open');
+  }
+</script>
+
+<!-- Contact form: submits to Netlify Forms (AJAX), so briefs land in your inbox without leaving the page.
+     ⚠️ ONE-TIME SETUP after deploying to Netlify:
+        Netlify dashboard → your site → Forms → Form notifications → Add notification → Email notification
+        → send to nehabhojwani330@gmail.com. (Submissions are also stored under Forms.)
+     Note: this only works on the deployed Netlify site, not when opening the file locally. -->
+<script>
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 4000);
+  }
+
+  function sendBrief(e) {
+    e.preventDefault();
+    const form = e.target;
+    const btn = form.querySelector('.btn-submit');
+    const original = btn.innerHTML;
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(new FormData(form)).toString()
+    })
+      .then((res) => {
+        if (!res.ok) throw new Error('Network response was not ok');
+        form.reset();
+        showToast('Thanks! Your brief just landed in my inbox ✨');
+      })
+      .catch(() => {
+        showToast('Hmm, that didn’t send — email me at nehabhojwani330@gmail.com');
+      })
+      .finally(() => {
+        btn.disabled = false;
+        btn.innerHTML = original;
+      });
+
+    return false;
   }
 </script>
 
